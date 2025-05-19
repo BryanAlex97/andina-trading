@@ -117,4 +117,4 @@ Universidad El Bosque
 
     Puede ser complementado con un frontend HTML/JS o React.
 
-    Código listo para pruebas con Postman o conexión desde frontend.
+    Código listo para pruebas con Postman o conexión desde frontend."# andina-trading" 
