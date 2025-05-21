@@ -1,0 +1,40 @@
+<h2>💼 Comisionistas</h2>
+
+<form (ngSubmit)="agregar()" style="margin-bottom: 1rem;">
+  <input
+    [(ngModel)]="nuevo.nombre"
+    name="nombre"
+    placeholder="Nombre"
+    required
+  />
+  <input
+    [(ngModel)]="nuevo.cedula"
+    name="cedula"
+    placeholder="Cédula"
+    required
+  />
+  <input
+    [(ngModel)]="nuevo.email"
+    name="email"
+    placeholder="Email"
+    required
+  />
+  <!-- Si más adelante conectamos países, esto será dinámico -->
+  <input
+    type="number"
+    [(ngModel)]="nuevo.pais_id"
+    name="pais_id"
+    placeholder="ID País"
+    required
+  />
+
+  <button type="submit">Agregar</button>
+</form>
+
+<ul>
+  <li *ngFor="let com of comisionistas">
+    {{ com.nombre }} - {{ com.cedula }} - {{ com.email }} - 🌎 {{ com.pais || 'Sin país' }}
+  </li>
+</ul>
+
+

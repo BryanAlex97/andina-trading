@@ -1,0 +1,12 @@
+<h2>📊 Resumen del Sistema</h2>
+
+<div *ngIf="cargando">Cargando resumen del sistema...</div>
+
+<ul *ngIf="!cargando && resumen">
+  <li>Total de inversionistas: {{ resumen.total_inversionistas }}</li>
+  <li>Total de contratos: {{ resumen.total_contratos }}</li>
+  <li>Total de órdenes de compra: {{ resumen.total_ordenes_compra }}</li>
+  <li>Total de órdenes de venta: {{ resumen.total_ordenes_venta }}</li>
+  <li>Total de acciones compradas: {{ resumen.total_acciones_compradas }}</li>
+  <li>Total de acciones vendidas: {{ resumen.total_acciones_vendidas }}</li>
+</ul>

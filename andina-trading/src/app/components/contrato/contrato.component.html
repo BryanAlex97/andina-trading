@@ -1,0 +1,26 @@
+<h2>📄 Contratos</h2>
+
+<form (ngSubmit)="crearContrato()" style="margin-bottom: 1rem;">
+  <select [(ngModel)]="nuevoContrato.inversionista_id" name="inversionista_id" required>
+    <option value="" disabled selected>Seleccione Inversionista</option>
+    <option *ngFor="let inv of inversionistas" [value]="inv.id">
+      {{ inv.nombre }}
+    </option>
+  </select>
+
+  <select [(ngModel)]="nuevoContrato.comisionista_id" name="comisionista_id" required>
+    <option value="" disabled selected>Seleccione Comisionista</option>
+    <option *ngFor="let com of comisionistas" [value]="com.id">
+      {{ com.nombre }}
+    </option>
+  </select>
+
+  <button type="submit">Crear contrato</button>
+</form>
+
+<ul>
+  <li *ngFor="let contrato of contratos">
+    <strong>{{ contrato.inversionista }}</strong> ↔ <strong>{{ contrato.comisionista }}</strong>
+    | Fecha: {{ contrato.fecha_creacion | date:'longDate' }}
+  </li>
+</ul>

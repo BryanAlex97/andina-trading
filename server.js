@@ -2,13 +2,15 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
+
 const investorRoutes = require('./routes/investorRoutes');
 const comisionistaRoutes = require('./routes/comisionistaRoutes');
 const accionRoutes = require('./routes/accionRoutes');
 const contratoRoutes = require('./routes/contratoRoutes');
 const ordenRoutes = require('./routes/ordenRoutes');
+const ordenRoutes = require('./routes/ordenRoutes');
 const reporteRoutes = require('./routes/reporteRoutes');
-
+const paisRoutes = require('./routes/paisRoutes');
 
 
 
@@ -22,7 +24,10 @@ app.use('/api/comisionistas', comisionistaRoutes);
 app.use('/api/acciones', accionRoutes);
 app.use('/api/contratos', contratoRoutes);
 app.use('/api/ordenes', ordenRoutes);
+app.use('/api/ordenes', ordenRoutes);
 app.use('/api/reportes', reporteRoutes);
+app.use('/api/paises', paisRoutes);
+
 
 
 

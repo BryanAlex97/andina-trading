@@ -1,0 +1,28 @@
+<div *ngIf="cargando" class="spinner-container">
+    <div class="hourglass"></div>
+    <p>Cargando datos del mercado...</p>
+  </div>
+  
+  <div *ngIf="!cargando">
+    <h2>🏦 Mercado - Acciones con mayor ganancia</h2>
+  
+    <table border="1" cellspacing="0" cellpadding="6">
+      <thead>
+        <tr>
+          <th>Símbolo</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Cambio %</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let accion of acciones">
+          <td>{{ accion.symbol }}</td>
+          <td>{{ accion.name }}</td>
+          <td>\${{ accion.price }}</td>
+          <td>{{ accion.changesPercentage }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

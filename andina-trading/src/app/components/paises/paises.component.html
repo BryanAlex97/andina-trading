@@ -1,0 +1,12 @@
+<h2>🌍 Países</h2>
+
+<form (ngSubmit)="crearPais()" style="margin-bottom: 1rem;">
+  <input [(ngModel)]="nuevoPais.nombre" name="nombre" placeholder="Nombre del país" required />
+  <button type="submit">Agregar país</button>
+</form>
+
+<ul>
+  <li *ngFor="let pais of paises">
+    {{ pais.nombre }}
+  </li>
+</ul>

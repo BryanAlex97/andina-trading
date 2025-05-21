@@ -1,0 +1,30 @@
+<h2>📈 Mis Inversiones</h2>
+
+<form (ngSubmit)="consultar()" style="margin-bottom: 1rem;">
+  <select [(ngModel)]="idInversionista" name="idInversionista" required>
+    <option value="" disabled selected>Seleccione un inversionista</option>
+    <option *ngFor="let inv of inversionistas" [value]="inv.id">
+      {{ inv.nombre }}
+    </option>
+  </select>
+  <button type="submit">Consultar</button>
+</form>
+
+<div *ngIf="contratos.length > 0 || ordenes.length > 0">
+  <h3>📄 Contratos</h3>
+  <p *ngFor="let contrato of contratos">
+    Contrato con <strong>{{ contrato.comisionista }}</strong> —
+    Fecha: {{ contrato.fecha_creacion | date:'shortDate' }}
+  </p>
+
+  <h3>📊 Órdenes</h3>
+  <p *ngFor="let orden of ordenes">
+    <strong>{{ orden.tipo.toUpperCase() }}</strong> 
+    {{ orden.cantidad }} acciones de <b>{{ orden.accion }}</b> — 
+    Fecha: {{ orden.fecha | date:'shortDate' }}
+  </p>
+</div>
+
+<div *ngIf="contratos.length === 0 && ordenes.length === 0 && idInversionista">
+  <p>No hay datos registrados para este inversionista.</p>
+</div>

@@ -1,0 +1,33 @@
+<h2>🧾 Órdenes de Compra/Venta</h2>
+
+<form (ngSubmit)="crearOrden()" style="margin-bottom: 1rem;">
+  <select [(ngModel)]="nuevaOrden.contrato_id" name="contrato_id" required>
+    <option value="" disabled selected>Seleccione Contrato</option>
+    <option *ngFor="let c of contratos" [value]="c.id">
+      {{ c.inversionista }} con {{ c.comisionista }} ({{ c.fecha_creacion | date:'shortDate' }})
+    </option>
+  </select>
+
+  <select [(ngModel)]="nuevaOrden.accion_id" name="accion_id" required>
+    <option value="" disabled selected>Seleccione Acción</option>
+    <option *ngFor="let a of acciones" [value]="a.id">
+      {{ a.simbolo }} - {{ a.nombre }}
+    </option>
+  </select>
+
+  <select [(ngModel)]="nuevaOrden.tipo" name="tipo" required>
+    <option value="compra">Compra</option>
+    <option value="venta">Venta</option>
+  </select>
+
+  <input [(ngModel)]="nuevaOrden.cantidad" name="cantidad" placeholder="Cantidad" required type="number" min="1" />
+  <button type="submit">Registrar orden</button>
+</form>
+
+<ul>
+  <li *ngFor="let orden of ordenes">
+    <strong>{{ orden.tipo.toUpperCase() }}</strong> 
+    {{ orden.cantidad }} acciones de <b>{{ orden.accion }}</b> por 
+    <i>{{ orden.inversionista }}</i> | Fecha: {{ orden.fecha | date:'mediumDate' }}
+  </li>
+</ul>

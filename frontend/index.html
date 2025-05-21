@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andina Trading - Frontend</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>📊 Panel de Gestión - Andina Trading</h1>
+
+  <section id="seccion-inversionistas">
+    <h2>👤 Inversionistas</h2>
+    <form id="form-inversionista">
+      <input type="text" id="nombre" placeholder="Nombre" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <button type="submit">Agregar</button>
+    </form>
+    <ul id="lista-inversionistas"></ul>
+  </section>
+
+  <section id="seccion-comisionistas">
+    <h2>💼 Comisionistas</h2>
+    <form id="form-comisionista">
+      <input type="text" id="nombre-com" placeholder="Nombre" required />
+      <input type="text" id="cedula-com" placeholder="Cédula" required />
+      <input type="email" id="email-com" placeholder="Email" required />
+      <section id="seccion-inversionistas">
+        <h2>👤 Inversionistas</h2>
+        <form id="form-inversionista">
+          <input type="text" id="nombre" placeholder="Nombre" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <select id="pais-com" required></select>
+          <button type="submit">Agregar</button>
+        </form>
+        <ul id="lista-inversionistas"></ul>
+      </section>
+    
+      <button type="submit">Agregar</button>
+    </form>
+    <ul id="lista-comisionistas"></ul>
+  </section>
+  
+  <section id="seccion-acciones">
+    <h2>📈 Acciones</h2>
+    <form id="form-accion">
+      <input type="text" id="empresa" placeholder="Empresa" required />
+      <input type="text" id="simbolo" placeholder="Símbolo" required />
+      <input type="number" id="precio" step="0.01" placeholder="Precio" required />
+      <button type="submit">Agregar</button>
+    </form>
+    <ul id="lista-acciones"></ul>
+  </section>
+  
+  <section id="seccion-contratos">
+    <h2>🧾 Contratos</h2>
+    <form id="form-contrato">
+      <label for="inversionista">Inversionista:</label>
+      <select id="inversionista" required></select>
+  
+      <label for="comisionista">Comisionista:</label>
+      <select id="comisionista" required></select>
+  
+      <button type="submit">Crear contrato</button>
+    </form>
+  
+    <ul id="lista-contratos"></ul>
+  </section>
+
+  <section id="seccion-ordenes">
+    <h2>💰 Órdenes de Compra/Venta</h2>
+    <form id="form-orden">
+      <label for="contrato">Contrato:</label>
+      <select id="contrato" required></select>
+  
+      <label for="accion">Acción:</label>
+      <select id="accion" required></select>
+  
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" required>
+        <option value="compra">Compra</option>
+        <option value="venta">Venta</option>
+      </select>
+  
+      <input type="number" id="cantidad" placeholder="Cantidad" required />
+      <button type="submit">Registrar orden</button>
+    </form>
+  
+    <ul id="lista-ordenes"></ul>
+  </section>
+
+  <section id="seccion-reportes">
+    <h2>📊 Reporte General del Sistema</h2>
+    <button id="btn-cargar-reporte">Actualizar</button>
+    <ul id="lista-reporte"></ul>
+  </section>
+  
+  <!-- Scripts -->
+  <script src="js/inversionistas.js"></script>
+  <script src="js/comisionistas.js"></script>
+  <script src="js/acciones.js"></script>
+  <script src="js/contratos.js"></script>
+  <script src="js/ordenes.js"></script>
+  <script src="js/reportes.js"></script>
+
+</body>
+</html>

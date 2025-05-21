@@ -1,0 +1,14 @@
+<p>inversionistas works!</p>
+<h2>👤 Inversionistas</h2>
+
+<form (ngSubmit)="agregar()">
+  <input [(ngModel)]="nuevo.nombre" name="nombre" placeholder="Nombre" required />
+  <input [(ngModel)]="nuevo.email" name="email" placeholder="Email" required />
+  <button type="submit">Agregar</button>
+</form>
+
+<ul>
+  <li *ngFor="let inv of inversionistas">
+    {{ inv.nombre }} - {{ inv.email }}
+  </li>
+</ul>
